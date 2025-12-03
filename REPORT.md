@@ -50,8 +50,8 @@ Program outputs per run: result (estimate), exact value, error, number of points
 </p>
 
 
-### Minimal Tables per Function (chunk size = 1024)
-
+### Output Tables per Function (chunk size = 1024)
+### Only showing 4 tables for report, additional json output file will be attached for more verbose and complete data
 Function x — Dynamic, static:
 
 | Threads p | Dyn Tp (s) | Dyn Eff | Dyn Err | Stat Tp (s) | Stat Eff | Stat Err |
@@ -107,14 +107,3 @@ Function 1/sqrt(x) — Dynamic, static:
   - As p grows, dynamic may maintain better efficiency if imbalance appears, while static can edge ahead when the workload is homogeneous.
 - Overall: Dynamic schedule produced equal or better efficiency across most thread counts in this experiment, with comparable accuracy (errors ~1e-5–1e-4). Static had slightly lower overhead at p=1 but lost efficiency as p increased.
 
-## Reproducibility
-- Build: `make`
-- Run examples:
-  - `OMP_NUM_THREADS=8 OMP_SCHEDULE=dynamic,1024 ./monte_carlo_omp x 10000000 42`
-  - `OMP_NUM_THREADS=8 OMP_SCHEDULE=static,1024 ./monte_carlo_omp x 10000000 42`
-- Benchmark and plot: `python3 benchmark.py`
-
-## References and Notes
-- `man erand48` for RNG details; thread-safe when state is thread-local.
-- Efficiency computed as T1/(p*Tp), from baseline p=1 timing.
-- The Monte Carlo estimator variance decreases as 1/N; errors reported align with this rate.
