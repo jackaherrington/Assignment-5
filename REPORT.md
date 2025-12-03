@@ -49,12 +49,6 @@ Program outputs per run: result (estimate), exact value, error, number of points
   <img src="efficiency_plot_inv_sqrt.png" alt="Efficiency (inv_sqrt)" width="48%"/>
 </p>
 
-### Per-function efficiency plots
-
-- Function x: ![Efficiency (x)](efficiency_plot_x.png)
-- Function x3: ![Efficiency (x3)](efficiency_plot_x3.png)
-- Function cos(100x): ![Efficiency (cos100x)](efficiency_plot_cos100x.png)
-- Function 1/sqrt(x): ![Efficiency (inv_sqrt)](efficiency_plot_inv_sqrt.png)
 
 ### Minimal Tables per Function (chunk size = 1024)
 
